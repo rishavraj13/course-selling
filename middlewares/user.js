@@ -1,6 +1,5 @@
-const { jwt } = require("zod/v4");
 
-const jwt = require(jsonwebtoken)
+const jwt = require("jsonwebtoken")
 const {JWT_USER} = require("../config")
 
 

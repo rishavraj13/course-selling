@@ -1,7 +1,7 @@
 const express = require("express")
 const Router = express.Router
 const UserRouter = Router();
-const { userModel } = require("../db")
+const { userModel, purchaseModel } = require("../db")
 const zod = require("zod");
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken");
@@ -94,9 +94,17 @@ UserRouter.post("/signin", async(req, res) => {
 
 })
 
-UserRouter.get("/user courses", (req, res) => {
+UserRouter.get("/userPurchases", async(req, res) => {
+
+    const userId = req.userId
+
+    const purchases = await purchaseModel.find({
+        userId,
+    })
+
     res.json({
-        message: "User purchased courses endpoint"
+        message: "User purchased courses endpoint",
+        purchases,
     })
 })
 
