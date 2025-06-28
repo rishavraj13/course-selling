@@ -1,8 +1,7 @@
-const moongoose = require("mongoose")
+const mongoose = require("mongoose")
 console.log("connected to db");
 
-moongoose.connect("mongodb+srv://rishavraj7016:k5JTTeJYh2J3Tbna@cluster0.iaxnkib.mongodb.net/Coursera-app")
-const Schema = moongoose.Schema
+const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 
 const userSchema = new Schema({
@@ -38,10 +37,10 @@ const purchaseSchema = new Schema({
 })
 
 
-const userModel = moongoose.model("user", userSchema);
-const adminModel = moongoose.model("admin",adminSchema );
-const courseModel = moongoose.model("Courses", courseSchema);
-const purchaseModel = moongoose.model("Purchase", purchaseSchema);
+const userModel = mongoose.model("user", userSchema);
+const adminModel = mongoose.model("admin",adminSchema );
+const courseModel = mongoose.model("Courses", courseSchema);
+const purchaseModel = mongoose.model("Purchase", purchaseSchema);
 
 module.exports = {
     userModel,

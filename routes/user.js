@@ -58,7 +58,7 @@ UserRouter.post("/signup", async (req, res) => {
 
 })
 
-UserRouter.post("/signin", async(res, req) => {
+UserRouter.post("/signin", async(req, res) => {
     
     const email = req.body.email
     const password = req.body.password
@@ -94,7 +94,7 @@ UserRouter.post("/signin", async(res, req) => {
 
 })
 
-UserRouter.get("/user courses", (res, req) => {
+UserRouter.get("/user courses", (req, res) => {
     res.json({
         message: "User purchased courses endpoint"
     })
